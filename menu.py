@@ -94,24 +94,27 @@ def text_menu():
                     print("\t{}. {}".format(item,
                                         main_menu_dict[selection][1][item][0]))
 
-                # Our sub menu selection
-                # We’re out of the for loop above, which just prints our menu.
-                # now we want to know where the user wants to go
-                print("Please enter the number of your selection.")
-                new_selection = input('Hit enter to return to main menu: ')
+                    # Our sub menu selection
+                    # We’re out of the for loop above, which just prints our menu.
+                    # now we want to know where the user wants to go
+                    print("Please enter the number of your selection.")
+                    new_selection = input('Hit enter to return to main menu: ')
+    
+                    if new_selection == '':
+                        break
+                        """So now we have our last selection
+                           This is from the SUB menu.
+                           Let's go ahead and execute the function
 
-                if new_selection == '':
-                    break
-                    """So now we have our last selection
-                       This is from the SUB menu.
-                       Let's go ahead and execute the function
-
-                       This is a cool thing about Python,
-                       in the dictionary we are storing a pointer
-                       to each function, but not executing it since
-                       there are no parens after the function name.
-                       first class objects! So when we call below,
-                       we add the parens and BAM! function call.
-                    """
-                else:
-                    main_menu_dict[selection][1][new_selection][1]()
+                           This is a cool thing about Python,
+                           in the dictionary we are storing a pointer
+                           to each function, but not executing it since
+                           there are no parens after the function name.
+                           first class objects! So when we call below,
+                           we add the parens and BAM! function call.
+                        """
+                    else:
+                        main_menu_dict[selection][1][new_selection][1]()
+                    
+                    
+text_menu()                    
